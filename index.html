@@ -1,33 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piano</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Javascript Piano</h1>
-    <div class="record-wrapper">
-        <span id="recordingTime">00:00sec</span>
-        <div class="actions">
-            <button id="recordTrigger">RECORD</button>
-        </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="piano-container">
+      <div id="c" class="note white">C</div>
+      <div id="cis" class="note black">C#</div>
+      <div id="d" class="note white">D</div>
+      <div id="dis" class="note black">D#</div>
+      <div id="e" class="note white">E</div>
+      <div id="f" class="note white">F</div>
+      <div id="fis" class="note black">F#</div>
+      <div id="g" class="note white">G</div>
+      <div id="gis" class="note black">G#</div>
+      <div id="a" class="note white">A</div>
+      <div id="ais" class="note black">A#</div>
+      <div id="h" class="note white">H</div>
     </div>
-    <div class="keyboard">
-        <div data-note="c" class="key white">C</div>
-        <div data-note="cis" class="key black">C#</div>
-        <div data-note="d" class="key white">D</div>
-        <div data-note="dis" class="key black">D#</div>
-        <div data-note="e" class="key white">E</div>
-        <div data-note="f" class="key white">F</div>
-        <div data-note="fis" class="key black">F#</div>
-        <div data-note="g" class="key white">G</div>
-        <div data-note="gis" class="key black">G#</div>
-        <div data-note="a" class="key white">A</div>
-        <div data-note="ais" class="key black">A#</div>
-        <div data-note="h" class="key white">H</div>
-    </div>
-    <script src="app.js"></script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>

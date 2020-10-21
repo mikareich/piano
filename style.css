@@ -1,87 +1,76 @@
 html,
 body {
+  height: 100vh;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #0e123a;
-  background-color: #fefefe;
+  display: grid;
+  place-items: center;
+  background-color: #ececec;
 }
-h1 {
-  text-align: center;
-}
-.record-wrapper {
-  margin: 50px auto;
-  width: 300px;
-  background-color: whitesmoke;
-  border: 1px solid black;
+
+.piano-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: -8px;
+  height: 400px;
 }
-.actions {
-  width: 100%;
+
+.note {
+  --offset: 8px;
+
+  padding-bottom: 20px;
   display: flex;
-  justify-content: space-evenly;
-}
-button {
-  font-family: unset;
-  color: white;
-  font-weight: normal;
-  font-size: initial;
-  padding: 8px 10px;
-  border: 0;
-  background-color: #008060;
-  border-radius: 2px;
-  margin: 5px;
-  font-weight: bold;
-}
-button:disabled {
-  opacity: 0.5;
-  background-color: #a32d24;
-}
-span#recordingTime {
-  font-size: 20pt;
-  font-weight: bold;
-  margin: 20px;
-}
-.keyboard {
-  display: flex;
-  width: 550px;
-  align-items: flex-start;
-  margin: 50px auto;
-  justify-content: space-around;
-}
-.key.white {
-  width: 80px;
-  height: 300px;
-  background-color: #ebebeb;
-  border-width: 0.5px;
-}
-.key.black {
-  width: 60px;
-  height: 220px;
-  background-color: #181818;
-  color: #ebebeb;
-  margin: 0px -30px 0px -30px;
-  z-index: 1;
-}
-.key {
-  display: flex;
-  align-items: flex-end;
   justify-content: center;
-  border: 1px solid black;
-  transition: background 200ms;
-  color: unset;
+  align-items: flex-end;
+  font-family: monospace;
+  font-size: large;
   font-weight: bold;
-  margin: 0;
-  user-select: none;
   cursor: pointer;
+  transition: 200ms;
+  box-shadow: calc(-1 * var(--offset)) var(--offset) 0 black;
+  user-select: none;
 }
-.key.black:hover {
-  background-color: #565656;
+
+.note.white {
+  width: 100px;
+  height: 100%;
+  color: black;
+  background-color: white;
 }
-.key.white:hover {
-  background-color: #c2c2c2;
+
+.note.white:nth-child(1) {
+  z-index: 8;
 }
-.key.active {
-  background-color: #8a8a8a !important;
+.note.white:nth-child(3) {
+  z-index: 7;
+}
+.note.white:nth-child(5) {
+  z-index: 6;
+}
+.note.white:nth-child(6) {
+  z-index: 5;
+}
+.note.white:nth-child(8) {
+  z-index: 4;
+}
+.note.white:nth-child(10) {
+  z-index: 3;
+}
+.note.white:nth-child(12) {
+  z-index: 2;
+}
+
+.note.black {
+  --offset: 4px;
+
+  width: 80px;
+  height: 66.66%;
+  margin-left: -40px;
+  margin-right: -40px;
+  z-index: 12;
+  background-color: black;
+  color: white;
+}
+
+.note:hover:active {
+  box-shadow: 0 0 0;
+  transform: translate(calc(-1 * var(--offset)), var(--offset));
 }
