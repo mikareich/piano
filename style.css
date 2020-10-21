@@ -10,6 +10,7 @@ body {
 .piano-container {
   display: flex;
   gap: -8px;
+  user-select: none;
   height: 400px;
 }
 
@@ -26,7 +27,6 @@ body {
   cursor: pointer;
   transition: 200ms;
   box-shadow: calc(-1 * var(--offset)) var(--offset) 0 black;
-  user-select: none;
 }
 
 .note.white {
@@ -63,6 +63,7 @@ body {
 
   width: 80px;
   height: 66.66%;
+  margin-top: -4px;
   margin-left: -40px;
   margin-right: -40px;
   z-index: 12;
@@ -70,7 +71,7 @@ body {
   color: white;
 }
 
-.note:hover:active {
+.note.selected {
   box-shadow: 0 0 0;
   transform: translate(calc(-1 * var(--offset)), var(--offset));
 }
